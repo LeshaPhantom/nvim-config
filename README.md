@@ -18,3 +18,5 @@ Remove the `.git` folder, so you can add it to your own repo later
 rm -rf ~/.config/nvim/.git
 ```
 
+## If Windows
+Install g++
