@@ -61,7 +61,7 @@ local function run_curr_python_file()
 
     -- Get terminal codes for running python file
     -- ("i" to enter insert before typing rest of the command)
-    local py_cmd = vim.api.nvim_replace_termcodes("ipython \"" .. file_name .. "\"<cr>", true, false, true)
+    local py_cmd = vim.api.nvim_replace_termcodes("ipython3 \"" .. file_name .. "\"<cr>", true, false, true)
 
     -- Determine terminal window split and launch terminal
     local percent_of_win = 0.5
@@ -73,7 +73,7 @@ local function run_curr_python_file()
     vim.api.nvim_feedkeys(py_cmd, "t", false)
 end
 
-vim.keymap.set({'n'}, '<A-r>', '', { 
+vim.keymap.set({'n'}, '<C-r>', '', { 
     desc = "Run .py file via Neovim built-in terminal", 
     callback = run_curr_python_file
 })
