@@ -17,3 +17,10 @@ Remove the `.git` folder, so you can add it to your own repo later
 ```sh
 rm -rf ~/.config/nvim/.git
 ```
+
+
+To work with telescope.nvim
+
+```sh
+sudo apt-get install ripgrep
+```

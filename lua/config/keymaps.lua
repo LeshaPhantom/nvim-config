@@ -77,3 +77,7 @@ vim.keymap.set({'n'}, '<C-r>', '', {
     desc = "Run .py file via Neovim built-in terminal", 
     callback = run_curr_python_file
 })
+
+-- Переключение вкладок с помщью TAB или shift-tab (akinsho/bufferline.nvim)
+vim.keymap.set('n', '<Tab>', vim.cmd.BufferLineCycleNext)
+vim.keymap.set('n', '<S-Tab>', vim.cmd.BufferLineCyclePrev)
