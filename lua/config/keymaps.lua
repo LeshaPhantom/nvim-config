@@ -67,6 +67,7 @@ local function run_curr_python_file()
     local percent_of_win = 0.5
     local curr_win_height = vim.api.nvim_win_get_height(0) -- Current window height
     local term_height = math.floor(curr_win_height * percent_of_win) -- Terminal height
+    vim.cmd(":w")
     vim.cmd(":below " .. term_height .. "split | term") -- Launch terminal (horizontal split)
 
     -- Press keys to run python command on current file
