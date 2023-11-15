@@ -40,4 +40,11 @@ require("lazy").setup({
 	{
 		"nvim-telescope/telescope.nvim"
 	},
+	{
+		'numToStr/Comment.nvim',
+		opts = {
+        -- add any options here
+		},
+	lazy = false,
+	},
 })
