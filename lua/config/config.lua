@@ -1,7 +1,7 @@
 vim.opt.mouse = "a"  
 vim.opt.encoding = "utf-8"
 vim.wo.number = true
-vim.g.noswapfile = true
+vim.cmd('set noswapfile')
 vim.wo.scrolloff = 7
 
 

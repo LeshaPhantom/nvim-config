@@ -47,4 +47,7 @@ require("lazy").setup({
 		},
 	lazy = false,
 	},
+	{
+		'pocco81/auto-save.nvim'
+	},
 })

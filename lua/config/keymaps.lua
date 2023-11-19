@@ -61,7 +61,7 @@ local function run_curr_python_file()
 
     -- Get terminal codes for running python file
     -- ("i" to enter insert before typing rest of the command)
-    local py_cmd = vim.api.nvim_replace_termcodes("ipython3 \"" .. file_name .. "\"<cr>", true, false, true)
+    local py_cmd = vim.api.nvim_replace_termcodes("ipython3.12 \"" .. file_name .. "\"<cr>", true, false, true)
 
     -- Determine terminal window split and launch terminal
     local percent_of_win = 0.5
