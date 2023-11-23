@@ -7,47 +7,29 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
+	-- Neo-tree — это плагин для просмотра файловой системы и других древовидных структур
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		},
 	},
-	{
-		"nvim-treesitter/nvim-treesitter"
-	},
-	{
-		"neovim/nvim-lspconfig"
-	},
-	{
-		"morhetz/gruvbox"
-	},
-	{
-		"windwp/nvim-autopairs"
-	},
+	{"nvim-treesitter/nvim-treesitter"}, -- Подсветка синтексиса
+	{"neovim/nvim-lspconfig"}, -- Настройка для движками. Например, "Pyright"
+	{"morhetz/gruvbox"}, -- Тема оформления. 
 	--autocompltedt
 	{'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'},
 	{'hrsh7th/cmp-cmdline'}, {'hrsh7th/nvim-cmp'},
-	{
-		"akinsho/bufferline.nvim"
-	},
-	{
-		"nvim-lualine/lualine.nvim"
-	},
-	{
-		"nvim-telescope/telescope.nvim"
-	},
-	{
-		'numToStr/Comment.nvim',
-		opts = {
-        -- add any options here
-		},
+	{"akinsho/bufferline.nvim"}, -- Возможность видеть вкладки
+	{"nvim-lualine/lualine.nvim"}, -- Строка состояния снизу
+	{"nvim-telescope/telescope.nvim"}, -- Поиск файлов и текста в файлах
+	{'numToStr/Comment.nvim', -- Возможность закомитить быстро
+	opts = {},
 	lazy = false,
 	},
-	{
-		'pocco81/auto-save.nvim'
-	},
+	{'pocco81/auto-save.nvim'}, -- Автосохранение при выходе в Normal
+
 })
