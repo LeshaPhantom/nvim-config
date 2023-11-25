@@ -31,5 +31,25 @@ require("lazy").setup({
 	lazy = false,
 	},
 	{'pocco81/auto-save.nvim'}, -- Автосохранение при выходе в Normal
+	{ -- Прогонка тестов
+		"nvim-neotest/neotest",
+  		dependencies = {
+    			"nvim-lua/plenary.nvim",
+    			"antoinemadec/FixCursorHold.nvim",
+			"nvim-neotest/neotest-python",
+			"nvim-neotest/neotest-plenary",
+			"nvim-neotest/neotest-vim-test",
+			"folke/neodev.nvim",
+			"mfussenegger/nvim-dap"
+  				}
+	},	
+	{ -- Дебагер
+		"mfussenegger/nvim-dap",
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+			"theHamsta/nvim-dap-virtual-text",			
+			"mfussenegger/nvim-dap-python"
+				}
 
+	},
 })

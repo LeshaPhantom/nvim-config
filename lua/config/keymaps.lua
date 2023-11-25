@@ -2,17 +2,6 @@ vim.g.mapleader = " "
 
 -- NeoTree
 vim.keymap.set('n', '<leader>e', ':Neotree float focus<CR>')
--- Setup language servers.
-local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {}
-lspconfig.rust_analyzer.setup {
-  -- Server-specific settings. See `:help lspconfig-setup`
-  settings = {
-    ['rust-analyzer'] = {},
-  },
-}
-
 
 -- Global mappings lspconfig
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -82,3 +71,22 @@ vim.keymap.set({'n'}, '<C-r>', '', {
 -- Переключение вкладок с помщью TAB или shift-tab (akinsho/bufferline.nvim)
 vim.keymap.set('n', '<Tab>', vim.cmd.BufferLineCycleNext)
 vim.keymap.set('n', '<S-Tab>', vim.cmd.BufferLineCyclePrev)
+
+-- Тесты
+
+vim.keymap.set('n', 'tr', ':lua require("neotest").run.run()<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', 'tf', ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', 'td', ':lua require("neotest").run.run({strategy = "dap"})<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', 'ts', ':lua require("neotest").run.stop()<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', 'to', ':lua require("neotest").summary.toggle()<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', 'tt', ':lua require("neotest").output.open()<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', 'tT', ':lua require("neotest").output.open({ enter = true })<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', 'tw', ':lua require("neotest").watch.toggle()<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', 't]', ':lua require("neotest").jump.prev({ status = "failed" })<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', 't[', ':lua require("neotest").jump.next({ status = "failed" })<CR>', {noremap = true, silent = true})
+
+-- Дебагер
+
+vim.keymap.set('n', '<leader>dr', ':lua require("dapui").toggle()<CR>')
+vim.keymap.set('n', '<leader>b', ':lua require"dap".toggle_breakpoint()<CR>')
+vim.keymap.set('n', '<F5>', ':lua require"dap".continue()<CR>')
