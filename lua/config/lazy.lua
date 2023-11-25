@@ -52,4 +52,8 @@ require("lazy").setup({
 				}
 
 	},
+	{ -- Автозакрыте скобок(и установка)
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	},
 })
