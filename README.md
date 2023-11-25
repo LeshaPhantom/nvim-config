@@ -24,3 +24,14 @@ To work with telescope.nvim
 ```sh
 sudo apt-get install ripgrep
 ```
+
+
+### Отладка
+Рекомендуется установить debugpy в выделенную виртуальную среду. Для этого:
+
+```sh
+mkdir .virtualenvs
+cd .virtualenvs
+python -m venv debugpy
+debugpy/bin/python -m pip install debugpy
+```
