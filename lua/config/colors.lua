@@ -5,4 +5,4 @@ function SetColor(color)
     vim.cmd.colorscheme(color)
 end
 
-SetColor()
+SetColor('catppuccin-macchiato')

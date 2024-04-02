@@ -89,4 +89,10 @@ vim.keymap.set('n', 't[', ':lua require("neotest").jump.next({ status = "failed"
 
 vim.keymap.set('n', '<leader>dr', ':lua require("dapui").toggle()<CR>')
 vim.keymap.set('n', '<leader>b', ':lua require"dap".toggle_breakpoint()<CR>')
-vim.keymap.set('n', '<F5>', ':lua require"dap".continue()<CR>')
+vim.keymap.set('n', '<f5>', ':lua require"dap".continue()<cr>')
+-- Убрать выделения после поиска 
+vim.keymap.set('n', '<esc>', ':noh<cr>')
+
+
+
+
