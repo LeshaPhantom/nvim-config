@@ -68,9 +68,14 @@ vim.keymap.set({'n'}, '<C-r>', '', {
     callback = run_curr_python_file
 })
 
--- Переключение вкладок с помщью TAB или shift-tab (akinsho/bufferline.nvim)
-vim.keymap.set('n', '<Tab>', vim.cmd.BufferLineCycleNext)
-vim.keymap.set('n', '<S-Tab>', vim.cmd.BufferLineCyclePrev)
+-- Настрока горячих клавиш для работы (akinsho/bufferline.nvim)
+vim.keymap.set('n', '<C-t>', '<CMD>BufferLinePick<CR>')
+vim.keymap.set('n', 'gg', '<CMD>BufferLinePickClose<CR>')
+vim.keymap.set('n', '<S-l>', '<CMD>BufferLineCycleNext<CR>')
+vim.keymap.set('n', '<S-h>', '<CMD>BufferLineCyclePrev<CR>')
+vim.keymap.set('n', ']b', '<CMD>BufferLineMoveNext<CR>')
+vim.keymap.set('n', '[b', '<CMD>BufferLineMovePrev<CR>')
+vim.keymap.set('n', 'gs', '<CMD>BufferLineSortByDirectory<CR>')
 
 -- Тесты
 
