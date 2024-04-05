@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 -- NeoTree
-vim.keymap.set('n', '<leader>e', ':Neotree float focus<CR>')
+vim.keymap.set('n', '<leader>e', ':Neotree left focus<CR>')
 
 -- Global mappings lspconfig
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
