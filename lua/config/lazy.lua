@@ -18,6 +18,7 @@ require("lazy").setup({
 		},
 	},
 	{"nvim-treesitter/nvim-treesitter"}, -- Подсветка синтексиса
+	{"nvim-treesitter/nvim-treesitter-refactor"}, -- Рефакторинг кода
 	{"neovim/nvim-lspconfig"}, -- Настройка для движками. Например, "Pyright"
 	{"morhetz/gruvbox"}, -- Тема оформления. 
 	--autocompltedt
