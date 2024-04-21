@@ -20,10 +20,13 @@ require("lazy").setup({
 	{"nvim-treesitter/nvim-treesitter"}, -- Подсветка синтексиса
 	{"nvim-treesitter/nvim-treesitter-refactor"}, -- Рефакторинг кода
 	{"neovim/nvim-lspconfig"}, -- Настройка для движками. Например, "Pyright"
-	{"morhetz/gruvbox"}, -- Тема оформления. 
+	{"morhetz/gruvbox"}, -- Темы оформления. 
+	{'catppuccin/nvim'},
+
 	--autocompltedt
 	{'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'},
 	{'hrsh7th/cmp-cmdline'}, {'hrsh7th/nvim-cmp'},
+
 	{"akinsho/bufferline.nvim"}, -- Возможность видеть вкладки
 	{"nvim-lualine/lualine.nvim"}, -- Строка состояния снизу
 	{"nvim-telescope/telescope.nvim"}, -- Поиск файлов и текста в файлах
@@ -56,9 +59,5 @@ require("lazy").setup({
 	{ -- Автозакрыте скобок(и установка)
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
-	},
-	{ -- Тема 
-		"catppuccin/nvim"
-	
 	},
 })

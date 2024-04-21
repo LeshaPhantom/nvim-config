@@ -15,3 +15,6 @@ vim.g.fileformat = unix
 vim.g.smartindent = true
 vim.g.tabstop = 2
 vim.g.shiftwidth = 2
+
+vim.api.nvim_set_option("clipboard","unnamed")
+
