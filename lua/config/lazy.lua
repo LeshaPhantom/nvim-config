@@ -7,8 +7,8 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
-	-- Neo-tree — это плагин для просмотра файловой системы и других древовидных структур
-	{
+	{ -- Neo-tree — это плагин для просмотра файловой системы и других древовидных структур
+
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
 		dependencies = {
@@ -21,13 +21,17 @@ require("lazy").setup({
 	{ "nvim-treesitter/nvim-treesitter-refactor" }, -- Рефакторинг кода
 	{ "neovim/nvim-lspconfig" }, -- Настройка для движками. Например, "Pyright"
 
-	-- Помогает устанавливать разные линторы/лсп и т.д.
-	{ "williamboman/mason.nvim", dependencies = {
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-	} },
+	{ -- Помогает устанавливать разные линторы/лсп и т.д.
+
+		"williamboman/mason.nvim",
+		dependencies = {
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+		},
+	},
 	{ "jose-elias-alvarez/null-ls.nvim" }, -- помогает форматировать
 
-	{ "morhetz/gruvbox" }, -- Темы оформления.
+	-- Темы оформления.
+	{ "morhetz/gruvbox" },
 	{ "catppuccin/nvim" },
 
 	--autocompltedt
@@ -40,13 +44,24 @@ require("lazy").setup({
 	{ "akinsho/bufferline.nvim" }, -- Возможность видеть вкладки
 	{ "nvim-lualine/lualine.nvim" }, -- Строка состояния снизу
 	{ "nvim-telescope/telescope.nvim" }, -- Поиск файлов и текста в файлах
-	{
-		"numToStr/Comment.nvim", -- Возможность закомитить быстро
+	{ -- Возможность закомитить быстро
+
+		"numToStr/Comment.nvim",
 		opts = {},
 		lazy = false,
+		config = function()
+			require("Comment").setup({})
+		end,
 	},
-	{ "pocco81/auto-save.nvim" }, -- Автосохранение при выходе в Normal
+	{ -- Автосохранение при выходе в Normal
+
+		"pocco81/auto-save.nvim",
+		config = function()
+			require("auto-save").setup({})
+		end,
+	},
 	{ -- Прогонка тестов
+
 		"nvim-neotest/neotest",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -59,6 +74,7 @@ require("lazy").setup({
 		},
 	},
 	{ -- Дебагер
+
 		"mfussenegger/nvim-dap",
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
@@ -67,6 +83,7 @@ require("lazy").setup({
 		},
 	},
 	{ -- Автозакрыте скобок(и установка)
+
 		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup({})
