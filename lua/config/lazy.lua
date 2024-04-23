@@ -20,6 +20,15 @@ require("lazy").setup({
 	{"nvim-treesitter/nvim-treesitter"}, -- Подсветка синтексиса
 	{"nvim-treesitter/nvim-treesitter-refactor"}, -- Рефакторинг кода
 	{"neovim/nvim-lspconfig"}, -- Настройка для движками. Например, "Pyright"
+
+	-- Помогает устанавливать разные линторы/лсп и т.д. 
+	{"williamboman/mason.nvim",
+		dependencies = {
+			"WhoIsSethDaniel/mason-tool-installer.nvim"	
+		},	
+	},
+	{"jose-elias-alvarez/null-ls.nvim"}, -- помогает форматировать
+
 	{"morhetz/gruvbox"}, -- Темы оформления. 
 	{'catppuccin/nvim'},
 
