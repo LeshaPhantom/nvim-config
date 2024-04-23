@@ -1,9 +1,8 @@
-vim.opt.mouse = "a"  
+vim.opt.mouse = "a"
 vim.opt.encoding = "utf-8"
 vim.wo.number = true
-vim.cmd('set noswapfile')
+vim.cmd("set noswapfile")
 vim.wo.scrolloff = 7
-
 
 vim.g.tabstop = 4
 vim.g.softtabstop = 4
@@ -16,5 +15,4 @@ vim.g.smartindent = true
 vim.g.tabstop = 2
 vim.g.shiftwidth = 2
 
-vim.api.nvim_set_option("clipboard","unnamed")
-
+vim.api.nvim_set_option("clipboard", "unnamed")

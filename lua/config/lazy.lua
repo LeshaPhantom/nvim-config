@@ -17,56 +17,59 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 		},
 	},
-	{"nvim-treesitter/nvim-treesitter"}, -- Подсветка синтексиса
-	{"nvim-treesitter/nvim-treesitter-refactor"}, -- Рефакторинг кода
-	{"neovim/nvim-lspconfig"}, -- Настройка для движками. Например, "Pyright"
+	{ "nvim-treesitter/nvim-treesitter" }, -- Подсветка синтексиса
+	{ "nvim-treesitter/nvim-treesitter-refactor" }, -- Рефакторинг кода
+	{ "neovim/nvim-lspconfig" }, -- Настройка для движками. Например, "Pyright"
 
-	-- Помогает устанавливать разные линторы/лсп и т.д. 
-	{"williamboman/mason.nvim",
-		dependencies = {
-			"WhoIsSethDaniel/mason-tool-installer.nvim"	
-		},	
-	},
-	{"jose-elias-alvarez/null-ls.nvim"}, -- помогает форматировать
+	-- Помогает устанавливать разные линторы/лсп и т.д.
+	{ "williamboman/mason.nvim", dependencies = {
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+	} },
+	{ "jose-elias-alvarez/null-ls.nvim" }, -- помогает форматировать
 
-	{"morhetz/gruvbox"}, -- Темы оформления. 
-	{'catppuccin/nvim'},
+	{ "morhetz/gruvbox" }, -- Темы оформления.
+	{ "catppuccin/nvim" },
 
 	--autocompltedt
-	{'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'},
-	{'hrsh7th/cmp-cmdline'}, {'hrsh7th/nvim-cmp'},
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-buffer" },
+	{ "hrsh7th/cmp-path" },
+	{ "hrsh7th/cmp-cmdline" },
+	{ "hrsh7th/nvim-cmp" },
 
-	{"akinsho/bufferline.nvim"}, -- Возможность видеть вкладки
-	{"nvim-lualine/lualine.nvim"}, -- Строка состояния снизу
-	{"nvim-telescope/telescope.nvim"}, -- Поиск файлов и текста в файлах
-	{'numToStr/Comment.nvim', -- Возможность закомитить быстро
-	opts = {},
-	lazy = false,
+	{ "akinsho/bufferline.nvim" }, -- Возможность видеть вкладки
+	{ "nvim-lualine/lualine.nvim" }, -- Строка состояния снизу
+	{ "nvim-telescope/telescope.nvim" }, -- Поиск файлов и текста в файлах
+	{
+		"numToStr/Comment.nvim", -- Возможность закомитить быстро
+		opts = {},
+		lazy = false,
 	},
-	{'pocco81/auto-save.nvim'}, -- Автосохранение при выходе в Normal
+	{ "pocco81/auto-save.nvim" }, -- Автосохранение при выходе в Normal
 	{ -- Прогонка тестов
 		"nvim-neotest/neotest",
-  		dependencies = {
-    			"nvim-lua/plenary.nvim",
-    			"antoinemadec/FixCursorHold.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
 			"nvim-neotest/neotest-python",
 			"nvim-neotest/neotest-plenary",
 			"nvim-neotest/neotest-vim-test",
 			"folke/neodev.nvim",
-			"mfussenegger/nvim-dap"
-  				}
-	},	
+			"mfussenegger/nvim-dap",
+		},
+	},
 	{ -- Дебагер
 		"mfussenegger/nvim-dap",
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
-			"theHamsta/nvim-dap-virtual-text",			
-			"mfussenegger/nvim-dap-python"
-				}
-
+			"theHamsta/nvim-dap-virtual-text",
+			"mfussenegger/nvim-dap-python",
+		},
 	},
 	{ -- Автозакрыте скобок(и установка)
 		"windwp/nvim-autopairs",
-		config = function() require("nvim-autopairs").setup {} end
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
 	},
 })
