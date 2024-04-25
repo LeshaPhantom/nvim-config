@@ -1,15 +1,15 @@
 vim.g.mapleader = " "
 
 -- NeoTree
-vim.keymap.set("n", "<C-n>", ":Neotree left focus<CR>")
+vim.keymap.set("n", "<C-n>", ":Neotree left focus<CR>", { noremap = true, silent = true })
 
 -- Global mappings lspconfig
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 -- Конфликт с NeoTree
-vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { noremap = true, silent = true })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { noremap = true, silent = true })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { noremap = true, silent = true })
+vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { noremap = true, silent = true })
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- Buffer local mappings.
 		-- See `:help vim.lsp.*` for documentation on any of the below functions
-		local opts = { buffer = ev.buf }
+		local opts = { buffer = ev.buf, noremap = true, silent = true }
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)

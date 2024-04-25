@@ -1,9 +1,9 @@
 local cmp = require("cmp")
 
 cmp.setup({
-	completion = {
-		autocomplete = false,
-	},
+	-- completion = {
+	-- 	autocomplete = false,
+	-- },
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
 		expand = function(args)
