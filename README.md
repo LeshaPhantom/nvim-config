@@ -25,6 +25,11 @@ To work with telescope.nvim
 sudo apt-get install ripgrep
 ```
 
+To work linter
+```sh
+sudo apt-get install mypy
+```
+
 
 ### Отладка
 Рекомендуется установить debugpy в выделенную виртуальную среду. Для этого:
