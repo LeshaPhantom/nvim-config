@@ -89,4 +89,7 @@ require("lazy").setup({
 			require("nvim-autopairs").setup({})
 		end,
 	},
+	{-- Играя для обучение vim
+	"ThePrimeagen/vim-be-good"
+	},
 })
