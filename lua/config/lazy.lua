@@ -18,7 +18,6 @@ require("lazy").setup({
 		},
 	},
 	{ "nvim-treesitter/nvim-treesitter" }, -- Подсветка синтексиса
-	{ "nvim-treesitter/nvim-treesitter-refactor" }, -- Рефакторинг кода
 	{ "neovim/nvim-lspconfig" }, -- Настройка для движками. Например, "Pyright"
 
 	{ -- Помогает устанавливать разные линторы/лсп и т.д.
@@ -43,7 +42,12 @@ require("lazy").setup({
 
 	{ "akinsho/bufferline.nvim" }, -- Возможность видеть вкладки
 	{ "nvim-lualine/lualine.nvim" }, -- Строка состояния снизу
-	{ "nvim-telescope/telescope.nvim" }, -- Поиск файлов и текста в файлах
+	{ -- Поиск файлов и текста в файлах
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.6",
+		branch = "0.1.x",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 	{ -- Возможность закомитить быстро
 
 		"numToStr/Comment.nvim",
@@ -60,28 +64,29 @@ require("lazy").setup({
 			require("auto-save").setup({})
 		end,
 	},
-	{ -- Прогонка тестов
-
-		"nvim-neotest/neotest",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"antoinemadec/FixCursorHold.nvim",
-			"nvim-neotest/neotest-python",
-			"nvim-neotest/neotest-plenary",
-			"nvim-neotest/neotest-vim-test",
-			"folke/neodev.nvim",
-			"mfussenegger/nvim-dap",
-		},
-	},
-	{ -- Дебагер
-
-		"mfussenegger/nvim-dap",
-		dependencies = {
-			"rcarriga/nvim-dap-ui",
-			"theHamsta/nvim-dap-virtual-text",
-			"mfussenegger/nvim-dap-python",
-		},
-	},
+	-- { -- Прогонка тестов
+	--
+	-- 	"nvim-neotest/neotest",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"antoinemadec/FixCursorHold.nvim",
+	-- 		"nvim-neotest/neotest-python",
+	-- 		"nvim-neotest/neotest-plenary",
+	-- 		"nvim-neotest/neotest-vim-test",
+	-- 		"folke/neodev.nvim",
+	-- 		"mfussenegger/nvim-dap",
+	-- 		"nvim-neotest/nvim-nio",
+	-- 	},
+	-- },
+	-- { -- Дебагер
+	--
+	-- 	"mfussenegger/nvim-dap",
+	-- 	dependencies = {
+	-- 		"rcarriga/nvim-dap-ui",
+	-- 		"theHamsta/nvim-dap-virtual-text",
+	-- 		"mfussenegger/nvim-dap-python",
+	-- 	},
+	-- },
 	{ -- Автозакрыте скобок(и установка)
 
 		"windwp/nvim-autopairs",
@@ -89,7 +94,7 @@ require("lazy").setup({
 			require("nvim-autopairs").setup({})
 		end,
 	},
-	{-- Играя для обучение vim
-	"ThePrimeagen/vim-be-good"
+	{ -- Играя для обучение vim
+		"ThePrimeagen/vim-be-good",
 	},
 })
